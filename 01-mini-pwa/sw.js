@@ -1,4 +1,4 @@
-importScripts("https://cdn.rawgit.com/mozilla/localForage/master/dist/localforage.js");
+importScripts("localforage.js");
 
 
 const FILES_TO_CACHE = [

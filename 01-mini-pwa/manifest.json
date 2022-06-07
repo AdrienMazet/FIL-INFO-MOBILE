@@ -1,3 +1,12 @@
 {
-    "name" : "Mini PWA"
+    "name" : "Mini PWA",
+    "icons": [
+        {
+          "src": "icons/icon1.jpg",
+          "type": "image/webp",
+          "sizes": "144x144"
+        }
+    ],
+    "display": "standalone",
+    "start_url":"/"
   }
