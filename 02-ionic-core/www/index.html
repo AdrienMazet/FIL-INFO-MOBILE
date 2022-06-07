@@ -17,40 +17,16 @@
         </ion-toolbar>
       </ion-header>
       <ion-content [fullscreen]="true">
-        <ion-list>
-          <ion-card>
-            <img
-              src="https://devfest2018.gdgnantes.com/images/posts/announce.jpg"
-            />
-            <ion-card-header>
-              <ion-card-title>Card Title</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in
-              awhile, and climb a mountain or spend a week in the woods. Wash
-              your spirit clean.
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <img
-              src="https://devfest2018.gdgnantes.com/images/posts/cfp-tickets.jpg"
-            />
-            <ion-card-header>
-              <ion-card-title>Card Title</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in
-              awhile, and climb a mountain or spend a week in the woods. Wash
-              your spirit clean.
-            </ion-card-content>
-          </ion-card>
-        </ion-list>
+        <ion-list id="myList"></ion-list>
+        <ion-fab
+          vertical="end"
+          horizontal="center"
+          slot="fixed"
+          style="margin-top: 80vh"
+        >
+          <ion-fab-button size="small">📷</ion-fab-button>
+        </ion-fab>
       </ion-content>
-      <ion-fab vertical="end" horizontal="center" slot="fixed">
-        <ion-fab-button>
-          <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
     </ion-app>
     <script src="index.js"></script>
   </body>
