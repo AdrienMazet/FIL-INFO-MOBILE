@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog DevFest Nantes</title>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title class="ion-text-center">My picture app</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content [fullscreen]="true">
+        <ion-list id="myList"></ion-list>
+        <ion-fab
+          vertical="end"
+          horizontal="center"
+          slot="fixed"
+          style="margin-top: 80vh"
+        >
+          <ion-fab-button size="small" id="take-picture-button"
+            >📷</ion-fab-button
+          >
+        </ion-fab>
+      </ion-content>
+    </ion-app>
+    <ion-modal is-open="true" id="picture-modal">
+      <ion-content>
+        <ion-header>
+          <ion-toolbar>
+            <ion-grid>
+              <ion-row>
+                <ion-title class="ion-text-center">
+                  Création d'un article privé
+                </ion-title>
+                <ion-button color="primary" type="submit">X</ion-button>
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+        </ion-header>
+        <form>
+          <ion-item>
+            <ion-label position="stacked">Titre</ion-label>
+            <ion-input required="true" />
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Description</ion-label>
+            <ion-input required="true" />
+          </ion-item>
+          <ion-button expand="full" color="primary" type="submit"
+            >Enregistrer</ion-button
+          >
+        </form>
+      </ion-content>
+    </ion-modal>
+    <script src="index.js"></script>
+  </body>
+</html>
