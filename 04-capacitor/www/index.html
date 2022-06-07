@@ -7,7 +7,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Blog DevFest Nantes</title>
+    <title>My picture app</title>
   </head>
   <body>
     <ion-app>
@@ -30,7 +30,7 @@
         </ion-fab>
       </ion-content>
     </ion-app>
-    <ion-modal is-open="true" id="picture-modal">
+    <ion-modal is-open="false" id="picture-modal">
       <ion-content>
         <ion-header>
           <ion-toolbar>
@@ -39,19 +39,24 @@
                 <ion-title class="ion-text-center">
                   Création d'un article privé
                 </ion-title>
-                <ion-button color="primary" type="submit">X</ion-button>
+                <ion-button
+                  color="primary"
+                  type="submit"
+                  id="close-modal-button"
+                  >X</ion-button
+                >
               </ion-row>
             </ion-grid>
           </ion-toolbar>
         </ion-header>
-        <form>
+        <form id="new-picture-form">
           <ion-item>
             <ion-label position="stacked">Titre</ion-label>
-            <ion-input required="true" />
+            <ion-input required="true" id="title-input" />
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Description</ion-label>
-            <ion-input required="true" />
+            <ion-input required="true" id="description-input" />
           </ion-item>
           <ion-button expand="full" color="primary" type="submit"
             >Enregistrer</ion-button
