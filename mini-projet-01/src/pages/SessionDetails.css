@@ -1,0 +1,26 @@
+.loading-session-text {
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.session-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-details-title {
+  padding: 15px;
+}
+
+.session-details-description {
+  padding: 15px;
+}
+
+.session-details-speaker-card {
+  display: flex;
+  padding: 15px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
