@@ -1,0 +1,31 @@
+.conference-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conference-container img {
+ max-width: 300px;
+ margin-bottom: 25px;
+}
+
+.conference-container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.conference-container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 15px 0px;
+}
+
+.conference-container .button {
+  margin-top: 30px;
+}
