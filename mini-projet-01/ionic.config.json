@@ -1,0 +1,7 @@
+{
+  "name": "mini-projet-01",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
