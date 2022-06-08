@@ -1,4 +1,5 @@
 import {
+  IonButton,
   IonContent,
   IonHeader,
   IonPage,
@@ -8,12 +9,16 @@ import {
 } from "@ionic/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import NotesModal from "../components/NotesModal";
 import { getSessions, getSpeakers } from "../services";
 import "./SessionDetails.css";
 
 const SessionDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [session, setSession] = useState<null | Session>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
     getSessions().then((sessions) => {
@@ -44,8 +49,8 @@ const SessionDetails: React.FC = () => {
                 photoUrl: string;
                 name: string;
               }[]
-            ).map((speaker) => (
-              <div className="session-details-speaker-card" key={id}>
+            ).map((speaker, index) => (
+              <div className="session-details-speaker-card" key={index}>
                 <img
                   src={`https://devfest2018.gdgnantes.com/${speaker.photoUrl}`}
                   alt="Vignette du speaker"
@@ -57,6 +62,17 @@ const SessionDetails: React.FC = () => {
             <IonText className="session-details-description">
               {session.description}
             </IonText>
+            <IonButton
+              className="session-details-notes-button"
+              onClick={openModal}
+            >
+              Mes notes
+            </IonButton>
+            <NotesModal
+              isOpen={isModalOpen}
+              sessionTitle={session.title}
+              closeModal={closeModal}
+            />
           </div>
         ) : (
           <p className="loading-session-text">Chargement des sessions...</p>
