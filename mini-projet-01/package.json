@@ -5,8 +5,10 @@
   "dependencies": {
     "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.5.1",
+    "@capacitor/device": "^1.1.2",
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.2",
+    "@capacitor/network": "^1.0.7",
     "@capacitor/status-bar": "1.0.8",
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",

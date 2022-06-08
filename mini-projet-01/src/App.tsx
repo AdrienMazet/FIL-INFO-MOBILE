@@ -24,7 +24,7 @@ import { Redirect, Route } from "react-router-dom";
 import Conference from "./pages/Conference";
 import SessionDetails from "./pages/SessionDetails";
 import Sessions from "./pages/Sessions";
-import Tab3 from "./pages/Tab3";
+import Device from "./pages/Device";
 import "./theme/variables.css";
 
 setupIonicReact();
@@ -43,8 +43,8 @@ const App: React.FC = () => (
           <Route exact path="/sessions/:id">
             <SessionDetails />
           </Route>
-          <Route path="/telephone">
-            <Tab3 />
+          <Route path="/device">
+            <Device />
           </Route>
           <Route exact path="/">
             <Redirect to="/conference" />
@@ -59,9 +59,9 @@ const App: React.FC = () => (
             <IonIcon icon={listOutline} />
             <IonLabel>Sessions</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="telephone" href="/telephone">
+          <IonTabButton tab="device" href="/device">
             <IonIcon icon={phonePortraitOutline} />
-            <IonLabel>Téléphone</IonLabel>
+            <IonLabel>Device</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
