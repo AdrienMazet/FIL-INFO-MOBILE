@@ -5,25 +5,20 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import "./Tab3.css";
 
-const Tab3: React.FC = () => {
+const SessionDetails: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle>Session details</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <div>Session details</div>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab3;
+export default SessionDetails;
