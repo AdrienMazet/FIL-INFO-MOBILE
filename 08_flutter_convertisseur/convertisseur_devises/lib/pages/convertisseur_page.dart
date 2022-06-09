@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../models/devise.dart';
 import '../styles.dart';
+import '../widgets/liste_devises.dart';
+import '../widgets/saisie_nombre.dart';
 
 class ConvertisseurDevisePage extends StatefulWidget {
   // ignore: use_key_in_widget_constructors
@@ -41,8 +42,12 @@ class _ConvertisseurDevisePage extends State<ConvertisseurDevisePage> {
           style: AppStyle.labelStyle,
         ),
         const Spacer(),
-        const TextField(
-          style: AppStyle.inputStyle,
+        SaisieNombre(
+          (newValue) => {
+            setState(() {
+              _valeur = double.parse(newValue);
+            })
+          },
         ),
         const Spacer(),
         const Text(
@@ -50,35 +55,41 @@ class _ConvertisseurDevisePage extends State<ConvertisseurDevisePage> {
           style: AppStyle.labelStyle,
         ),
         const Spacer(),
-        DropdownButton(
-            isExpanded: true,
-            onChanged: (newVal) => true,
-            items: const [
-              DropdownMenuItem<Devise>(
-                child: Text('Val 1'),
-              ),
-              DropdownMenuItem<Devise>(
-                child: Text('Val 2'),
-              ),
-            ]),
+        ListeDevises(
+            (Devise? newValue) => {
+                  setState(() {
+                    if (newValue != null) {
+                      _deviseInitial = newValue;
+                    }
+                  })
+                },
+            _deviseInitial),
         const Spacer(),
         const Text('Vers', style: AppStyle.labelStyle),
         const Spacer(),
-        DropdownButton(
-            isExpanded: true,
-            onChanged: (newVal) => true,
-            items: const [
-              DropdownMenuItem<Devise>(
-                child: Text('Val 1'),
-              ),
-              DropdownMenuItem<Devise>(
-                child: Text('Val 2'),
-              ),
-            ]),
+        ListeDevises(
+            (Devise? newValue) => {
+                  setState(() {
+                    if (newValue != null) {
+                      _deviseFinale = newValue;
+                    }
+                  })
+                },
+            _deviseFinale),
         const Spacer(
           flex: 2,
         ),
-        ElevatedButton(onPressed: () => true, child: const Text('Convertir')),
+        ElevatedButton(
+            onPressed: () => {
+                  setState(() {
+                    double? tauxInitial = taux[_deviseInitial];
+                    double? tauxFinal = taux[_deviseFinale];
+                    if (tauxInitial != null && tauxFinal != null) {
+                      _resultat = (_valeur / tauxInitial) * tauxFinal;
+                    }
+                  })
+                },
+            child: const Text('Convertir')),
         const Spacer(
           flex: 2,
         ),
