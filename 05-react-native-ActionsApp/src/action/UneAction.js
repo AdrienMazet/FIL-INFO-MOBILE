@@ -1,19 +1,18 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import BoutonAction from './BoutonAction'
+import {BoutonAction} from './BoutonAction'
 
 /**
  * Composant représentant une action.
- *
- * TODO modifier le code pour afficher le titre de l'action et les boutons associés.
  */
-export const UneAction = () => (
+export const UneAction = ({action, completeAction, deleteAction}) => (
     <View style={styles.conteneurUneAction}>
         <Text style={styles.texteUneAction}>
-            Ici bientôt le titre de l'action
+            {action.title}
         </Text>
         <View style={styles.boutons}>
-
+            <BoutonAction nom="Terminer" variant={action.done ? "done" : "default"} onPress={completeAction}/>
+            <BoutonAction nom="Supprimer" variant={"delete"} onPress={deleteAction}/>
         </View>
     </View>
 )

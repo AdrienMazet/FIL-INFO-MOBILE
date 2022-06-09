@@ -8,18 +8,13 @@ import {StyleSheet, TextInput, View} from 'react-native'
  *
  * * `texteSaisie` : il s'agit du libellé à afficher dans le champ texte de saisie. Il va alimenter la propriété `value` de l'élément <TextInput>
  * * `evtTexteModifie`  : fonction permettant de notifier le composant parent qu'une modification a eu lieu.
- *
- * TODO 1. Appliquer le style conteneurSaisie à l'élément <View>
- *
- * TODO 2. Appliquer le style texteSaisie à l'élément <TextInput>
- *
- * TODO 3. Valoriser la propriété `value` de l'élément <TextInput> avec la valeur de `texteSaisie`
- *
- * TODO 4. Valoriser la propriété `onChangeText` de l'élément <TextInput> avec la valeur de `evtTexteModifie`
  */
 export const Saisie = ({texteSaisie, evtTexteModifie}) => (
-    <View>
+    <View style={styles.conteneurSaisie}>
         <TextInput
+            style={styles.texteSaisie}
+            value={texteSaisie}
+            onChangeText={(value) => evtTexteModifie(value)}
             placeholder='Quelle prochaine action ?'
             placeholderTextColor='#CACACA'
             selectionColor='#666666'/>
