@@ -1,30 +1,20 @@
 import {
   IonContent,
   IonHeader,
+  IonItem,
+  IonLabel,
+  IonList,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonList,
-  IonItem,
-  IonLabel,
 } from "@ionic/react";
 import { useEffect, useState } from "react";
+import { getSessions } from "../services";
 import "./Sessions.css";
-
-type Session = {
-  id: string;
-  title: string;
-};
-
-const getSessions = async () => {
-  const response = await fetch(
-    "https://devfest-nantes-2018-api.cleverapps.io/sessions"
-  );
-  return response.json();
-};
 
 const Sessions: React.FC = () => {
   const [sessions, setSessions] = useState<null | Session[]>(null);
+
   useEffect(() => {
     getSessions().then((data) =>
       setSessions(Object.entries(data).map(([entry]) => data[entry]))
