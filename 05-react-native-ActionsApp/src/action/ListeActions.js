@@ -9,7 +9,7 @@ export const ListeActions = ({ actions , completeAction, deleteAction, filter })
         <View>
             {actions
                 .filter(a => {
-                    if (filter === "Active")
+                    if (filter === "Actives")
                         return !a.done;
                     else if (filter === "Done")
                         return a.done;

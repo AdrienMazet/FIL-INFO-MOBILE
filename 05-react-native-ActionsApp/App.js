@@ -38,7 +38,7 @@ export default function App() {
 
   const [actions, setActions] = useState([]);
 
-  const [selectedTab, setSelectedTab] = useState('Tous');
+  const [selectedTab, setSelectedTab] = useState('Toutes');
 
 
   /**

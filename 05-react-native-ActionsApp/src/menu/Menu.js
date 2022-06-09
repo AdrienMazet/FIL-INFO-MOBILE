@@ -7,9 +7,9 @@ import OptionMenu from './OptionMenu'
  */
 const Menu = ({selected, onSelect}) => (
     <View style={styles.menu}>
-        <OptionMenu title="Tous" selected={selected === 'Tous'} onPress={() => onSelect('Tous')}/>
-        <OptionMenu title="Active" selected={selected === 'Active'} onPress={() => onSelect('Active')}/>
-        <OptionMenu title="Done" selected={selected === 'Done'} onPress={() => onSelect('Done')}/>
+        <OptionMenu title="Toutes" selected={selected === 'Toutes'} onPress={() => onSelect('Toutes')}/>
+        <OptionMenu title="Actives" selected={selected === 'Actives'} onPress={() => onSelect('Actives')}/>
+        <OptionMenu title="Terminées" selected={selected === 'Done'} onPress={() => onSelect('Done')}/>
     </View>
 )
 
